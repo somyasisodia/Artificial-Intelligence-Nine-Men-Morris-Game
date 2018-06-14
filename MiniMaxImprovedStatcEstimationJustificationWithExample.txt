@@ -1,0 +1,215 @@
+MiniMax Improved Statc Estimation Justification With Example
+
+
+I have taken Close Mill formation with a move into consideration. My static estimation assigns more heuristic to the move which is making close mill or more close mill positions. 
+I have added the count of close mill can be made by moving white dots in a particular position, so playing the dot which makes more close mills would be assigned greater heuristic and
+has more possibility to be picked up as the best move. As result of applying this static estimation, I am getting better heuristic as well as you can see in the examples below :
+
+New Static Estimation Function :
+
+MiniMax Opening 
+
+public static int staticEstimation(char[] inputBoard){
+		int numWhitePieces = numWhitePieces(inputBoard);
+		int numBlackPieces = numBlackPieces(inputBoard);
+		int numMillsPossible = 0;
+		for(int i=0; i<inputBoard.length; i++){
+			if(inputBoard[i] == 'W'){
+				if(checkCloseMill(inputBoard, i)){
+					numMillsPossible++;
+				}
+			}
+		}
+		
+		return ((numWhitePieces + numMillsPossible) - numBlackPieces);
+}
+
+As we can see below the MiniMax Opening Improved is making a mill while MiniMax Opening is not.
+
+Example 1 :
+
+depth 3
+MiniMax Opening Improved
+
+Playing MiniMax Improved Opening
+WBWxxxBxxxxxxWxxxWxxxxB
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+Minimax value : 6
+Evaluated positions : 4121
+MinMax static estimation value : 6
+Next Move : WxWBxxBxWxxxxWxxxWxxWxB
+Output Board : 
+W - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - x - - - - - - W
+
+
+MiniMax Opening
+
+Playing MiniMax Opening
+Input : BxxBxBWxWxxWxxxBBxxxxBx
+Depth : 3
+Input Board : 
+x - - - - - - B - - - - - - x
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   x - B - B   |     |
+|     |   |       |   |     |
+W - - x- -x       W- -x - - x
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - B     |
+|             |             |
+B - - - - - - x - - - - - - x
+
+Evaluated positions : 4490
+MinMax static estimation value : -3
+Next Move : BWxBBBWxWxxWxxxBBxxxxBx
+Output Board : 
+x - - - - - - B - - - - - - x
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   x - B - B   |     |
+|     |   |       |   |     |
+W - - x- -x       W- -x - - x
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - B - - - B     |
+|             |             |
+B - - - - - - W - - - - - - x
+
+
+New Static Estimation Function :
+MiniMax Game Improved
+
+public static int staticEstimation(char[] board){
+		int numMillsPossible = 0;
+		for(int i=0; i<board.length; i++){
+			if(board[i] == 'W'){
+				if(checkCloseMill(board, i)){
+					numMillsPossible++;
+				}
+			}
+		}
+		if(numBlackPieces(board) <= 2){
+			return Integer.MAX_VALUE;
+		} else{
+			if(numWhitePieces(board) <= 2){
+				return Integer.MIN_VALUE;
+			} else{
+				if(numBlackMoves(board) == 0){
+					return Integer.MAX_VALUE;
+				} else{
+					return ((1000 * (numWhitePieces(board) - numBlackPieces(board) + numMillsPossible)) - numBlackMoves(board));
+				}
+			}
+		}
+	} 
+
+
+As we can see below the MiniMax Game Improved is again making a mill position move while MiniMax Game is not.
+
+
+Example 2 :
+
+depth 3
+
+Playing MiniMax Game Improved 
+Input : WBBxxxWxBxxxxWWxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+B - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - B
+Evaluated positions : 873
+MinMax static estimation value : 4955
+Next Move : WxxxBxWxBxWxxWWxxxxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+B - - x- -W       x- -x - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+W - - - - - - x - - - - - - x
+
+
+Playing MiniMax Game 
+Input : WBBxxxWxBxxxxWWxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+B - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - B
+Evaluated positions : 873
+MinMax static estimation value : 1955
+Next Move : WxxxBxWxBxWxxWWxxxxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+B - - W- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+W - - - - - - x - - - - - - x

@@ -1,0 +1,917 @@
+Examples to show comparison of MiniMax and AlphaBeta. Below 2 examples clearly shows that output from both MiniMax as well as Alpha Beta is same but AlphaBeta saves lot of efforts due to its pruning advantage. The positions evaluated in case AlphaBeta is comparitively very less.
+
+
+
+Example 1 : WBWxxxBxxxxxxWxxxWxxxxB
+
+
+Playing MiniMax Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 2
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+WBWxxxBxxxxxxWxxxWxxxxB
+Minimax value : 1
+Evaluated positions : 257
+MinMax static estimation value : 1
+Next Move : WBWWBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     W - - - B - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+
+
+
+Playing AlphaBeta Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 2
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+AlphaBeta search
+postions evaluated:32
+AlphaBeta estimation:1
+Next Move : WBWWBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     W - - - B - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+
+
+
+Playing MiniMax Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+WBWxxxBxxxxxxWxxxWxxxxB
+Minimax value : 3
+Evaluated positions : 4121
+MinMax static estimation value : 3
+Next Move : WxWBxxBxWxxxxWxxxWxxWxB
+Output Board : 
+W - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - x - - - - - - W
+
+
+Playing AlphaBeta Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+AlphaBeta search
+postions evaluated:1179
+AlphaBeta estimation:3
+Next Move : WxWBxxBxWxxxxWxxxWxxWxB
+Output Board : 
+W - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - x - - - - - - W
+
+
+
+
+Playing MiniMax Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 4
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+WBWxxxBxxxxxxWxxxWxxxxB
+Minimax value : 2
+Evaluated positions : 60429
+MinMax static estimation value : 2
+Next Move : WBWBxxBxWxxxxWxxxWxxWxB
+Output Board : 
+W - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+
+
+
+Playing AlphaBeta Opening 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 4
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+AlphaBeta search
+postions evaluated:3147
+AlphaBeta estimation:2
+Next Move : WBWBxxBxWxxxxWxxxWxxWxB
+Output Board : 
+W - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+
+
+
+
+Playing MiniMax Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 2
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+Evaluated positions : 457
+MinMax static estimation value : 952
+Next Move : xWWxBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+x - - - - - - W - - - - - - W
+
+
+Playing AlphaBeta Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 2
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+postions evaluated:68
+AlphaBeta estimation:952
+Next Move : xWWxBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+x - - - - - - W - - - - - - W
+
+
+
+Playing MiniMax Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+Evaluated positions : 3969
+MinMax static estimation value : 948
+Next Move : xWxWxxBxxxxxxWBxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   B - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     W - - - x - - - x     |
+|             |             |
+x - - - - - - W - - - - - - x
+
+
+
+Playing AlphaBeta Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 3
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+postions evaluated:275
+AlphaBeta estimation:948
+Next Move : xWxWxxBxxxxxxWBxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   B - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     W - - - x - - - x     |
+|             |             |
+x - - - - - - W - - - - - - x
+
+
+
+
+Playing MiniMax Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 4
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+Evaluated positions : 229892
+MinMax static estimation value : 952
+Next Move : WxWxBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+W - - - - - - x - - - - - - W
+
+
+
+Playing AlphaBeta Game 
+Input : WBWxxxBxxxxxxWxxxWxxxxB
+Depth : 4
+Input Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - B - - - - - - W
+postions evaluated:2526
+AlphaBeta estimation:952
+Next Move : WxWxBxBxxxxxxWxxxWxxxxB
+Output Board : 
+x - - - - - - x - - - - - - B
+|             |             |
+|     W - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - x   |     |
+|     |   |       |   |     |
+x - - x- -x       x- -x - - W
+|     |   |       |   |     |
+|     |   B - - - x   |     |
+|     |               |     |
+|     x - - - B - - - x     |
+|             |             |
+W - - - - - - x - - - - - - W
+
+
+
+Example 2 : WWWBxxWxWxxBBWxxBBxxWBx
+
+
+
+Playing MiniMax Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 2
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+WWWBxxWxWxxBBWxxBBxxWBx
+Minimax value : 1
+Evaluated positions : 189
+MinMax static estimation value : 1
+Next Move : WWWxxxxBWxxBBWxxBBxxWBW
+Output Board : 
+W - - - - - - B - - - - - - W
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - B   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+
+Playing AlphaBeta Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 2
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+AlphaBeta search
+postions evaluated:70
+AlphaBeta estimation:1
+Next Move : WWWxxxxBWxxBBWxxBBxxWBW
+Output Board : 
+W - - - - - - B - - - - - - W
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - B   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+Playing MiniMax Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 3
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+WWWBxxWxWxxBBWxxBBxxWBx
+Minimax value : 3
+Evaluated positions : 2476
+MinMax static estimation value : 3
+Next Move : WWWxxxxBWxxBBWxxBBxxWWW
+Output Board : 
+W - - - - - - W - - - - - - W
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - B   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+
+Playing AlphaBeta Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 3
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+AlphaBeta search
+postions evaluated:616
+AlphaBeta estimation:3
+Next Move : WWWxxxxBWxxBBWxxBBxxWWW
+Output Board : 
+W - - - - - - W - - - - - - W
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - B   |     |
+|     |               |     |
+|     x - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+Playing MiniMax Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 4
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+WWWBxxWxWxxBBWxxBBxxWBx
+Minimax value : 1
+Evaluated positions : 27090
+MinMax static estimation value : 1
+Next Move : WWWxxBxWWxxBBWxxBBxBWBW
+Output Board : 
+W - - - - - - B - - - - - - W
+|             |             |
+|     B - - - x - - - B     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - W   |     |
+|     |               |     |
+|     x - - - x - - - B     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+
+Playing AlphaBeta Opening 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 4
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+AlphaBeta search
+postions evaluated:1324
+AlphaBeta estimation:1
+Next Move : WWWxxBxWWxxBBWxxBBxBWBW
+Output Board : 
+W - - - - - - B - - - - - - W
+|             |             |
+|     B - - - x - - - B     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - W   |     |
+|     |               |     |
+|     x - - - x - - - B     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+
+Playing MiniMax Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 2
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+Evaluated positions : 90
+MinMax static estimation value : 990
+Next Move : WWWBxxxxWBWBBWxxBxxxWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - B- -W       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+Playing AlphaBeta Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 2
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+postions evaluated:26
+AlphaBeta estimation:990
+Next Move : WWWBxxxxWBWBBWxxBxxxWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     x - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - B- -W       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+Playing MiniMax Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 3
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+Evaluated positions : 923
+MinMax static estimation value : 1989
+Next Move : WWWBxWWBWxxxxxxxBBxxWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - x
+|     |   |       |   |     |
+|     |   W - - - B   |     |
+|     |               |     |
+|     B - - - x - - - W     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+Playing AlphaBeta Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 3
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+postions evaluated:264
+AlphaBeta estimation:1989
+Next Move : WWWBxWWBWxxxxxxxBBxxWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       x- -x - - x
+|     |   |       |   |     |
+|     |   W - - - B   |     |
+|     |               |     |
+|     B - - - x - - - W     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+
+Playing MiniMax Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 4
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+Evaluated positions : 14423
+MinMax static estimation value : 989
+Next Move : WWWBxxxxWxxBBWWxxxBBWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     x - - - B - - - B     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+
+
+Playing AlphaBeta Game 
+Input : WWWBxxWxWxxBBWxxBBxxWBx
+Depth : 4
+Input Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     B - - - x - - - x     |
+|     |       |       |     |
+|     |   x - x - B   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   W - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
+postions evaluated:1279
+AlphaBeta estimation:989
+Next Move : WWWBxxxxWxxBBWWxxxBBWBx
+Output Board : 
+W - - - - - - B - - - - - - x
+|             |             |
+|     x - - - B - - - B     |
+|     |       |       |     |
+|     |   W - x - x   |     |
+|     |   |       |   |     |
+W - - x- -x       B- -B - - W
+|     |   |       |   |     |
+|     |   x - - - x   |     |
+|     |               |     |
+|     B - - - x - - - x     |
+|             |             |
+W - - - - - - W - - - - - - W
